@@ -10,4 +10,4 @@ fi
 SOURCE=$1
 DEST=$2
 
-tar cf - $SOURCE | ssh $DEST '( tar xf - )'
+tar -zcpf - $SOURCE | ssh $DEST '( tar xf - )'
