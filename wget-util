@@ -1,0 +1,1 @@
+wget -r http://192.168.201.16/voice_control/ --no-parent -R "index.html*" -nH
