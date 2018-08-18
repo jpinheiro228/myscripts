@@ -38,5 +38,13 @@ antigen apply
 
 ##############################################################
 
+#Add Aliases
+source ~/git-repos/myscripts/configs/aliases
+
+#Virtualenv
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi

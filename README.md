@@ -6,12 +6,12 @@ To enable ZSH configuration, make a link on your home folder:
 
 ```bash
     cd ~
-    ln -s git-repos/myscripts/zshrc .zshrc
+    ln -s git-repos/myscripts/configs/zshrc .zshrc
 ```
 
 To enable Spacemacs configuration, make a link on your home folder:
 
 ```bash
     cd ~
-    ln -s git-repos/myscripts/spacemacs .spacemacs
+    ln -s git-repos/myscripts/configs/spacemacs .spacemacs
 ```
