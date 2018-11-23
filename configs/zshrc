@@ -48,3 +48,7 @@ source /usr/bin/virtualenvwrapper.sh
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
+
+# Anaconda
+#export PATH="/home/jpinheiro/anaconda3/bin:$PATH";
+#source /home/jpinheiro/anaconda3/etc/profile.d/conda.sh

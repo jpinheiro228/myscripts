@@ -1,1 +1,2 @@
 alias j="sudo journalctl -xb"
+alias mountnfs="sudo mount nfs.gtel.ufc.br:/home/users /home/jpinheiro/nfs-gtel"
