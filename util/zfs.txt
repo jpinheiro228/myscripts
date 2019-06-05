@@ -1,0 +1,65 @@
+# user: root
+# pass: ubuntu
+
+# Create pool (raidz, mirror, mirror w/ cache)
+# Check and set main properties of pools (work with physical devices) and datasets
+# Create NFS Shares
+# Take snapshots, revert, revert only a file, clone, promote
+# Add mode vdevs to pools
+# If have time, check FreeNAS (basic: create pools, set samba and NFS share, create users)
+
+apt update && apt dist-upgrade -y
+apt install zfsutils-linux nfs-kernel-server nfs-common
+
+reboot
+
+mkdir /vdevs
+
+for i in $(seq 0 9); do 
+    truncate -s 1G /vdevs/disk0$i.img; 
+done
+
+# To create pools with same name as an old pool (even if destroyed), need to pass -f
+zpool create myraidz raidz /vdevs/disk01.img /vdevs/disk02.img /vdevs/disk03.img
+zpool create mymirror mirror /vdevs/disk04.img /vdevs/disk05.img
+zpool create mymirror2 mirror /vdevs/disk06.img /vdevs/disk07.img cache /vdevs/disk08.img
+
+zpool status
+
+zpool get all myraidz
+
+zpool set listsnapshots=on myraidz
+
+zfs list
+zfs create myraidz/home
+zfs create myraidz/home/jpinheiro
+zfs create myraidz/home/diego
+zfs create myraidz/home/igor
+
+zfs list
+zfs set quota=100M myraidz/home
+zfs list
+zfs set quota=10M myraidz/home/igor
+zfs list
+
+zfs snapshot myraidz/home/jpinheiro@001
+
+touch /myraidz/home/jpinheiro/myfile
+
+zfs snapshot myraidz/home/jpinheiro@002
+
+echo "lakjhalkj"> /myraidz/home/jpinheiro/myfile
+
+zfs rollback myraidz/home/jpinheiro@002
+
+#truncate disk
+zpool scrub myraidz
+
+zpool status
+
+# conserta o erro
+zpool scrub myraidz
+
+zpool status
+
+zpool clear myraidz
