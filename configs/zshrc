@@ -5,14 +5,18 @@ setopt extendedglob notify
 unsetopt nomatch
 bindkey -e
 
-zstyle :compinstall filename '/home/jpinheiro/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit
 
 ##############################################################
 ##################### Antigen Config #########################
-source /home/jpinheiro/myapps/antigen.zsh
+if [[ ! -f $HOME/antigen.zsh ]]; then
+   curl -L git.io/antigen > $HOME/antigen.zsh
+fi
+
+source $HOME/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -39,12 +43,16 @@ antigen apply
 ##############################################################
 
 #Add Aliases
-source ~/git-repos/myscripts/configs/aliases
+alias j="sudo journalctl -xb"
+alias mountnfs="sudo mount nfs.gtel.ufc.br:/home/users /home/jpinheiro/nfs-gtel"
 
 #Virtualenv
-export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+if [[ -f /usr/bin/virtualenvwrapper.sh ]]; then
+    export WORKON_HOME=~/.virtualenvs
+    source /usr/bin/virtualenvwrapper.sh
+fi
 
+# Tilix
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
