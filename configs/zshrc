@@ -18,6 +18,8 @@ fi
 
 source $HOME/antigen.zsh
 
+#ANTIGEN_LOG=$HOME/.antigen.log
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -34,8 +36,11 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+antigen bundle unixorn/autoupdate-antigen.zshplugin
+
 # Load the theme.
 antigen theme bureau
+#antigen theme af-magic
 
 # Tell Antigen that you're done.
 antigen apply
@@ -56,7 +61,3 @@ fi
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
-
-# Anaconda
-#export PATH="/home/jpinheiro/anaconda3/bin:$PATH";
-#source /home/jpinheiro/anaconda3/etc/profile.d/conda.sh

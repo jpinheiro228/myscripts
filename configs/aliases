@@ -1,2 +1,7 @@
 alias j="sudo journalctl -xb"
 alias mountnfs="sudo mount nfs.gtel.ufc.br:/home/users /home/jpinheiro/nfs-gtel"
+alias wopenstack="workon openstack && source git-repos/xerces-openstack/UFC-GTEL-openrc.sh && openstack"
+alias pacs="sudo pacman -S"
+alias pacup="sudo pacman -Syyu"
+alias pacf="pacman -Ss"
+alias pacq="pacman -Q"
