@@ -59,5 +59,9 @@ fi
 
 # Tilix
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
+    source /etc/profile.d/vte.sh
+fi
+
+if [ ! -f ~/.emacs.d/spacemacs.mk ]; then
+    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 fi
