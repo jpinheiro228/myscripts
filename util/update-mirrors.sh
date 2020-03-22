@@ -7,7 +7,7 @@ if [[ ! $USER -eq "root" ]]; then
     exit
 fi
 
-reflector --verbose --latest 50 --sort rate --save ./new_mirrors
+reflector --verbose --fastest 50 --sort rate --save ./new_mirrors
 
 rankmirrors -n 5 ./new_mirrors > /etc/pacman.d/mirrorlist
 

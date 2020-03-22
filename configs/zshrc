@@ -48,8 +48,7 @@ antigen apply
 ##############################################################
 
 #Add Aliases
-alias j="sudo journalctl -xb"
-alias mountnfs="sudo mount nfs.gtel.ufc.br:/home/users /home/jpinheiro/nfs-gtel"
+source ~/git-repos/myscripts/configs/aliases
 
 #Virtualenv
 if [[ -f /usr/bin/virtualenvwrapper.sh ]]; then
