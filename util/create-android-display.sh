@@ -22,8 +22,9 @@ gtf $W $H 60 | sed '3q;d' | sed 's/Modeline//g' | awk '{print $1;}' | sed 's/^.\
 gtf $W $H 60 | sed '3q;d' | sed 's/Modeline//g' | awk '{print $1;}' | sed 's/^.\(.*\).$/\1/' | xargs xrandr --output $O --right-of $P --mode
 
 # Forward the VNC port to your device and start a VNC session
-adb reverse tcp:5900 tcp:5900
-x11vnc -localhost -clip ${W}x${H}+${PW}+0
+#adb reverse tcp:5900 tcp:5900
+#x11vnc -localhost -clip ${W}x${H}+${PW}+0
+x11vnc -multiptr -cursor arrow -clip ${W}x${H}+${PW}+0
 
 # When the session ends, turn off the virtual display
 xrandr --output $O --off
