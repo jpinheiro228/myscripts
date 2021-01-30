@@ -1,8 +1,11 @@
 alias j="sudo journalctl -xb"
-alias mountnfs="sudo mount nfs.gtel.ufc.br:/home/users /home/jpinheiro/nfs-gtel"
-alias wopenstack="workon openstack && source git-repos/xerces-openstack/UFC-GTEL-openrc.sh && openstack"
 alias pacs="sudo pacman -S"
 alias pacup="sudo pacman -Syyu"
+alias gl="git log --oneline --graph"
+alias gs="git status"
+
+#Specific
 alias androidscreen="/home/jpinheiro/git-repos/myscripts/util/create-android-display.sh"
-#alias clro="sudo pacman -Rns `sudo pacman -Qtdq`"
+alias newproject="$HOME/git-repos/myscripts/util/newproject.sh"
 alias hue="~/PycharmProjects/myHue/main.py"
+
