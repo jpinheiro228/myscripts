@@ -3,7 +3,7 @@
 PI_BOOT=/run/media/jpinheiro/boot
 PI_ROOTFS=/run/media/jpinheiro/rootfs
 
-echo "This will enable USB OTG Mode on your Raspberry Pi."
+echo "This will enable USB OTG Mode on your Raspberry Pi with RASPBERRYPI OS."
 echo "The pi will be accessible on pi@172.16.1.1"
 echo "Do not forget to add a static IP to your computer on the interface that the Pi will create."
 

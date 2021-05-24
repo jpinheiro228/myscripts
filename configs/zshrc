@@ -20,16 +20,19 @@ source $HOME/antigen.zsh
 
 #ANTIGEN_LOG=$HOME/.antigen.log
 
+#ZSH_TMUX_AUTOSTART=true
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 
-antigen bundle git
-antigen bundle archlinux
+#antigen bundle git
+#antigen bundle cp
+#antigen bundle archlinux
+antigen bundle tmux
 antigen bundle pip
 antigen bundle command-not-found
-antigen bundle cp
 antigen bundle colored-man-pages
 
 antigen bundle zsh-users/zsh-completions

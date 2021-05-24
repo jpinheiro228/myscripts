@@ -1,9 +1,57 @@
-### Setting up Pi Zero OTG - The quick way (No USB keyboard, mouse, HDMI monitor needed)
-**More details** - [http://blog.gbaman.info/?p=791](http://blog.gbaman.info/?p=791)
+### Setting up Pi Zero OTG (No USB keyboard, mouse or HDMI monitor needed)
 
-For this method, alongside your Pi Zero, MicroUSB cable and MicroSD card, only an additional computer is required, which can be running Windows (with [Bonjour](https://support.apple.com/kb/DL999), iTunes or Quicktime installed), Mac OS or Linux (with Avahi Daemon installed, for example Ubuntu has it built in).
-**1.** Flash Raspbian Jessie full or Raspbian Jessie Lite [onto the SD card](https://www.raspberrypi.org/documentation/installation/installing-images/README.md).
-**2.** Once Raspbian is flashed, open up the boot partition (in Windows Explorer, Finder etc) and add to the bottom of the ```config.txt``` file ```dtoverlay=dwc2``` on a new line, then save the file.
-**3.** If using a recent release of Jessie (Dec 2016 onwards), then create a new file simply called ```ssh``` in the SD card as well. By default SSH is now disabled so this is required to enable it. **Remember** - Make sure your file doesn't have an extension (like .txt etc)!
-**4.** Finally, open up the ```cmdline.txt```. Be careful with this file, it is very picky with its formatting! Each parameter is seperated by a single space (it does not use newlines). Insert ```modules-load=dwc2,g_ether``` after ```rootwait```. To compare, an edited version of the ```cmdline.txt``` file at the time of writing, can be found [here](http://pastebin.com/WygSaptQ).
-**5.** That's it, eject the SD card from your computer, put it in your Raspberry Pi Zero and connect it via USB to your computer. It will take up to 90s to boot up (shorter on subsequent boots). It should then appear as a USB Ethernet device. You can SSH into it using ```raspberrypi.local``` as the address.
+On the Raspberry Pi 4, the USB-C connector is OTG ready, meaning that you can
+simply connect your PC using a USB-C to USB-(C or A) cable to your Raspberry Pi
+and access it over SSH
+
+#### RaspberryPi OS
+
+1. Flash you SD car with the latest RaspberryPi OS
+   ([Link](https://www.raspberrypi.org/software/))
+
+2. Once flashed, open up the BOOT PARTITION and add to the bottom of the
+`config.txt` file `dtoverlay=dwc2` on a new line, then save the file.
+
+3. Enable SSH by creating a file called `ssh` on the BOOT PARTITION
+
+4. Finally, open up the `cmdline.txt` and insert `modules-load=dwc2,g_ether`
+right after `rootwait`.
+
+5. To make sure you can access your Pi, add an static IP to it. Open the ROOTFS
+   PARTITION and add to the bottom of the `/etc/dhcpcd.conf` the following
+   lines:
+
+```text
+interface usb0
+static ip_address=172.16.1.1/24
+```
+
+6. Turn on your Pi by connecting it to your computer and then access it with
+`ssh pi@172.16.1.1`
+
+#### Ubuntu Server
+
+1. Flash you SD car with the latest Ubuntu Server
+   ([Link](https://ubuntu.com/download/raspberry-pi))
+
+2. Once flashed, open up the BOOT PARTITION and add to the bottom of the
+`nobtconfig.txt` file `dtoverlay=dwc2` on a new line, then save the file.
+
+3. Enable SSH by creating a file called ``ssh`` on the BOOT PARTITION
+
+4. Finally, open up the `nobtcmdline.txt` and insert `modules-load=dwc2,g_ether`
+right after `rootwait`.
+
+5. To make sure you can access your Pi, add an static IP to it. Still on the
+   BOOT PARTITION, add the following right after the `eth0` configuration:
+
+```text
+usb0:
+  dhcp4: false
+  addresses:
+    - 172.16.1.1/24
+  optional: true
+```
+
+6. Turn on your Pi by connecting it to your computer and then access it with
+   `ssh ubuntu@172.16.1.1`
