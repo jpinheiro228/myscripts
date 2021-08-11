@@ -1,0 +1,28 @@
+---
+- name: Install cockpit
+  hosts: raspberryNodes
+  become: true
+
+  tasks:
+  - name: Install cockpit base
+    apt:
+      update_cache: yes
+      name:
+        - cockpit
+        - python3
+        - rsync
+        - zip
+      state: latest
+    
+  - name: Get 45Drives Navigator
+    git:
+      repo: https://github.com/45Drives/cockpit-navigator.git
+      dest: /opt/git-repos/cockpit-navigator
+      clone: yes
+      update: yes
+      version: v0.5.1
+
+  - name: Compile and Install 45Drives Navigator
+    make: 
+      chdir: /opt/git-repos/cockpit-navigator
+      target: install

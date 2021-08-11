@@ -11,7 +11,7 @@ echo "Do not forget to add a static IP to your computer on the interface that th
 touch ${PI_BOOT}/ssh
 
 # Add OTG
-echo "dtoverlay=dwc2" > ${PI_BOOT}/config.txt
+echo "dtoverlay=dwc2" >> ${PI_BOOT}/config.txt
 sed -i "s/rootwait/rootwait modules-load=dwc2,g_ether/" ${PI_BOOT}/cmdline.txt
 
 # Configure OTG IP
