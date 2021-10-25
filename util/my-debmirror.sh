@@ -5,7 +5,11 @@
 #
 # Don't touch the user's keyring, have our own instead
 #
-#export GNUPGHOME=/home/mirrorkeyring
+export GNUPGHOME=/tmp
+
+if [ ! -f /tmp/trustedkeys.gpg ]; then
+    gpg --keyring /usr/share/keyrings/ubuntu-archive-keyring.gpg --export|gpg --no-default-keyring --keyring /tmp/trustedkeys.gpg --import
+fi
 
 arch=i386,amd64
 section=main,restricted,universe,multiverse

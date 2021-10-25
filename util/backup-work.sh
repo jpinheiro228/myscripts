@@ -1,5 +1,8 @@
 #!/bin/bash
 
+DEST=/run/user/1000/gvfs/smb-share:server=nas.local,share=home/`date +%4Y%2m`.tar.gz
+#DEST=/mnt/`date +%4Y%2m`.tar.gz
+
 tar --exclude=.steam \
     --exclude=.local/share/Steam \
     --exclude=anaconda3 \
@@ -13,5 +16,7 @@ tar --exclude=.steam \
     --exclude=.arduino* \
     --exclude=bin \
     --exclude=.electron* \
-    -vzpcf /run/user/1000/gvfs/smb-share:server=nas.local,share=home/`date +%4Y%2m`.tar.gz \
+    -vzpcf $DEST \
     -C /home/jpinheiro .
+
+exit 0
