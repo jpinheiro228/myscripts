@@ -16,6 +16,7 @@ tar --exclude=.steam \
     --exclude=.arduino* \
     --exclude=bin \
     --exclude=.electron* \
+    --exclude=.jd* \
     -vzpcf $DEST \
     -C /home/jpinheiro .
 
