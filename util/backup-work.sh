@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEST=/run/user/1000/gvfs/smb-share:server=nas.local,share=home/`date +%4Y%2m`.tar.gz
+DEST=/run/user/1000/gvfs/smb-share:server=nas.jpinheiro.tech,share=home/`date +%4Y%2m`.tar.gz
 #DEST=/mnt/`date +%4Y%2m`.tar.gz
 
 tar --exclude=.steam \
@@ -17,6 +17,15 @@ tar --exclude=.steam \
     --exclude=bin \
     --exclude=.electron* \
     --exclude=.jd* \
+    --exclude=.texlive* \
+    --exclude=.node* \
+    --exclude=.gem* \
+    --exclude=.cert* \
+    --exclude=.nv* \
+    --exclude=.org.jabref* \
+    --exclude=.conda* \
+    --exclude=.python* \
+    --exclude=.grsync* \
     -vzpcf $DEST \
     -C /home/jpinheiro .
 

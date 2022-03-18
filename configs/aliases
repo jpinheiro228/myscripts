@@ -1,5 +1,5 @@
 alias j="sudo journalctl -xb"
-alias pikup="sudo pikaur -Syyu"
+alias pikup="pikaur -Syyu"
 alias pacs="sudo pacman -S"
 alias gl="git log --oneline --graph"
 alias gs="git status"

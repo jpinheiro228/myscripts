@@ -57,6 +57,9 @@ source ~/git-repos/myscripts/configs/aliases
 if [[ -f /usr/bin/virtualenvwrapper.sh ]]; then
     export WORKON_HOME=~/.virtualenvs
     source /usr/bin/virtualenvwrapper.sh
+elif [[ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
+    export WORKON_HOME=~/.virtualenvs
+    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 fi
 
 # Tilix
@@ -68,18 +71,7 @@ if [ ! -f ~/.emacs.d/spacemacs.mk ]; then
     git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/jpinheiro/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/jpinheiro/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/jpinheiro/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/jpinheiro/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+#if [ -z "$SSH_AUTH_SOCK" ] ; then
+#    eval `ssh-agent -s` >> /dev/null
+#    ssh-add -q
+#fi
