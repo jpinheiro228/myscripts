@@ -6,7 +6,7 @@ sudo apt install -y tmux git build-essential nano cmake
 
 if [[ ! -d ~/git-repos/myscripts ]]; then
     mkdir -p ~/git-repos
-    git clone https://github.com/jpinheiro228/myscripts.git
+    git clone https://github.com/jpinheiro228/myscripts.git ~/git-repos/myscripts
 fi
 
 ln -sf ~/git-repos/myscripts/configs/nanorc ~/.nanorc
