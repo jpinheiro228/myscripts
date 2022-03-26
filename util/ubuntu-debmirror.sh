@@ -7,6 +7,8 @@
 #
 export GNUPGHOME=/tmp
 
+# Add check of available packages, like rsync, gpg and debmirror
+
 if [ ! -f /tmp/trustedkeys.gpg ]; then
     gpg --keyring /usr/share/keyrings/ubuntu-archive-keyring.gpg --export|gpg --no-default-keyring --keyring /tmp/trustedkeys.gpg --import
 fi

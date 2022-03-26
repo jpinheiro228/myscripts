@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Add cli args for boot and rootfs
+# Add a check to see if os is really raspbian
+
 PI_BOOT=/run/media/jpinheiro/boot
 PI_ROOTFS=/run/media/jpinheiro/rootfs
 
