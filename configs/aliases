@@ -5,7 +5,8 @@ alias gl="git log --oneline --graph"
 alias gs="git status"
 
 #Specific
-alias newproject="$HOME/git-repos/myscripts/util/newproject.sh"
+alias git-watch="$GIT_HOME/myscripts/util/git-watch.sh"
+alias newproject="$GIT_HOME/myscripts/util/newproject.sh"
 alias hue="~/PycharmProjects/myHue/main.py"
 alias jfed="java -jar ~/Downloads/jfed_gui/experimenter-gui.jar"
 alias charm="~/myapps/pycharm/bin/pycharm.sh"

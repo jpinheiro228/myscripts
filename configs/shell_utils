@@ -1,6 +1,6 @@
 # Utilities to be sourced within current shell
 
-export GIT_HOME=~/git-repos
+export GIT_HOME=$HOME/git-repos
 
 # Enable SSH agent
 if [ -z $SSH_AUTH_SOCK ]; then
