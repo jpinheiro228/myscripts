@@ -19,3 +19,6 @@ choco install -y msys2
 [System.Environment]::SetEnvironmentVariable('PYTHONPATH', 'C:\Python38\Libs',[System.EnvironmentVariableTarget]::Machine)
 [System.Environment]::SetEnvironmentVariable('DICPATH', 'C:\Hunspell',[System.EnvironmentVariableTarget]::Machine)
 [System.Environment]::SetEnvironmentVariable('DICTIONARY', 'en_US',[System.EnvironmentVariableTarget]::Machine)
+
+cd $env:AppData
+git clone https://github.com/syl20bnr/spacemacs .emacs.d

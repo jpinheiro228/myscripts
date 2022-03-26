@@ -4,3 +4,5 @@ if [[ ! -f $SSH_AUTH_SOCK ]]; then
     eval `ssh-agent -s`
     ssh-add
 fi
+
+bind "set completion-ignore-case on"
