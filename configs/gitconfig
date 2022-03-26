@@ -1,0 +1,5 @@
+[user]
+	email = joao.jfnp@gmail.com
+	name = Joao Pinheiro
+[core]
+	autocrlf = input

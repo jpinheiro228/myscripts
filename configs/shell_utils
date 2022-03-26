@@ -1,0 +1,31 @@
+# Utilities to be sourced within current shell
+
+export GIT_HOME=~/git-repos
+
+# Enable SSH agent
+if [ -z $SSH_AUTH_SOCK ]; then
+    eval `ssh-agent -s` >> /dev/null
+    ssh-add -q
+fi
+
+#Virtualenv
+if [[ -f /usr/bin/virtualenvwrapper.sh ]]; then
+    export WORKON_HOME=~/.virtualenvs
+    source /usr/bin/virtualenvwrapper.sh
+elif [[ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
+    export WORKON_HOME=~/.virtualenvs
+    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+fi
+
+#Add Aliases
+source ~/git-repos/myscripts/configs/aliases
+
+# Get spacemacs
+if [ ! -f ~/.emacs.d/spacemacs.mk ]; then
+    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+fi
+
+# Bash specifics
+if [[ $SHELL = /bin/bash ]]; then
+    bind "set completion-ignore-case on"
+fi

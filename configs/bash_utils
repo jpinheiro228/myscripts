@@ -1,8 +1,0 @@
-# Utilities to be sourced within .bashrc
-
-if [ -z $SSH_AUTH_SOCK ]; then
-    eval `ssh-agent -s` >> /dev/null
-    ssh-add -q
-fi
-
-bind "set completion-ignore-case on"

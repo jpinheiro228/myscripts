@@ -49,29 +49,4 @@ antigen theme bureau
 antigen apply
 
 ##############################################################
-
-#Add Aliases
-source ~/git-repos/myscripts/configs/aliases
-
-#Virtualenv
-if [[ -f /usr/bin/virtualenvwrapper.sh ]]; then
-    export WORKON_HOME=~/.virtualenvs
-    source /usr/bin/virtualenvwrapper.sh
-elif [[ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
-    export WORKON_HOME=~/.virtualenvs
-    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-fi
-
-# Tilix
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
-fi
-
-if [ ! -f ~/.emacs.d/spacemacs.mk ]; then
-    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-fi
-
-#if [ -z "$SSH_AUTH_SOCK" ] ; then
-#    eval `ssh-agent -s` >> /dev/null
-#    ssh-add -q
-#fi
+source ~/git-repos/myscripts/configs/shell_utils
