@@ -1,23 +1,18 @@
 # myscripts
 
-My configuration files for Emacs (Spacemacs), ZSH and a few usefull scrips.
+Configuration files and usefull scrips.
 
-## ZSH Shell
-
-To enable ZSH configuration, make a link on your home folder:
+## Linux - Linking configuration files
 
 ```bash
-    cd ~
-    ln -s git-repos/myscripts/configs/zshrc .zshrc
-```
+    ln -s ~/git-repos/myscripts/configs/nanorc ~/.nanorc
+    ln -s ~/git-repos/myscripts/configs/tmux.conf ~/.tmux.conf
+    ln -s ~/git-repos/myscripts/configs/spacemacs ~/.spacemacs
 
-## Spacemacs
+    ln -s ~/git-repos/myscripts/configs/aliases ~/.bash_aliases
+    echo "source ~/git-repos/myscripts/configs/bash_utils" >> ~/.bashrc
 
-To enable Spacemacs configuration, make a link on your home folder:
-
-```bash
-    cd ~
-    ln -s git-repos/myscripts/configs/spacemacs .spacemacs
+    ln -s ~/git-repos/myscripts/configs/zshrc ~/.zshrc
 ```
 
 ### Windows Install
@@ -41,8 +36,7 @@ package collection if you don't have enough space for the full one.
 Clone spacemacs to your `.emacs.d` folder (prefer using git bash) and link your configuration file:
 
 ```cmd
-    cd ~
-    git clone https://github.com/syl20bnr/spacemacs .emacs.d
-    mklink .spacemacs git-repos\myscripts\configs\spacemacs-windows
+    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+    mklink ~/.spacemacs ~/git-repos\myscripts\configs\spacemacs-windows
 ```
 
