@@ -20,8 +20,8 @@ fi
 #Add Aliases
 source ~/git-repos/myscripts/configs/aliases
 
-# Get spacemacs
-if [ ! -f ~/.emacs.d/spacemacs.mk ]; then
+# Get spacemacs if emacs is present
+if [[ ! -z $(which emacs) ]] && [[ ! -f ~/.emacs.d/spacemacs.mk ]]; then
     git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 fi
 
