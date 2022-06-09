@@ -10,7 +10,7 @@ Configuration files and usefull scrips.
     ln -s ~/git-repos/myscripts/configs/spacemacs ~/.spacemacs
 
     ln -s ~/git-repos/myscripts/configs/aliases ~/.bash_aliases
-    echo "source ~/git-repos/myscripts/configs/bash_utils" >> ~/.bashrc
+    echo "source ~/git-repos/myscripts/configs/shell_utils" >> ~/.bashrc
 
     ln -s ~/git-repos/myscripts/configs/zshrc ~/.zshrc
 ```
