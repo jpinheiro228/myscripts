@@ -1,13 +1,1 @@
-set autoindent
-set constantshow
-set historylog
-set locking
-set nowrap
-set suspend
-set tabsize 4
-set tabstospaces
-set trimblanks
-include "/usr/share/nano/*.nanorc"
-
-
-
+../../configs/nanorc
