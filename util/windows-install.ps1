@@ -15,8 +15,8 @@ choco install -y emacs
 choco install -y hunspell.portable
 choco install -y msys2
 
-[System.Environment]::SetEnvironmentVariable('Path', "C:\Python38;C:\Python38\Scripts;" + $Env:Path,[System.EnvironmentVariableTarget]::Machine)
-[System.Environment]::SetEnvironmentVariable('PYTHONPATH', 'C:\Python38\Libs',[System.EnvironmentVariableTarget]::Machine)
+[System.Environment]::SetEnvironmentVariable('Path', "C:\Python310;C:\Python310\Scripts;" + $Env:Path,[System.EnvironmentVariableTarget]::Machine)
+[System.Environment]::SetEnvironmentVariable('PYTHONPATH', 'C:\Python310\Libs',[System.EnvironmentVariableTarget]::Machine)
 [System.Environment]::SetEnvironmentVariable('DICPATH', 'C:\Hunspell',[System.EnvironmentVariableTarget]::Machine)
 [System.Environment]::SetEnvironmentVariable('DICTIONARY', 'en_US',[System.EnvironmentVariableTarget]::Machine)
 

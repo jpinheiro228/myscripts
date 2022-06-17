@@ -18,7 +18,7 @@ elif [[ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
 fi
 
 #Add Aliases
-source ~/git-repos/myscripts/configs/aliases
+source ${GIT_HOME}/myscripts/configs/aliases
 
 # Get spacemacs if emacs is present
 if [[ -f /usr/bin/emacs ]] && [[ ! -f ~/.emacs.d/spacemacs.mk ]]; then

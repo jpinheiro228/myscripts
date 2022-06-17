@@ -1,4 +1,6 @@
 alias j="sudo journalctl -xb"
+alias jw="sudo journalctl -p 'warning'"
+
 alias pikup="pikaur -Syyu"
 alias pacs="sudo pacman -S"
 alias gl="git log --oneline --graph"
@@ -12,3 +14,6 @@ alias jfed="java -jar ~/Downloads/jfed_gui/experimenter-gui.jar"
 alias charm="~/myapps/pycharm/bin/pycharm.sh"
 alias wirehome="sudo wg-quick up home"
 alias cd..="cd .."
+alias dps="docker ps -a"
+alias tmr="transmission-remote -n 'transmission:transmission'"
+alias emacs="emacs -nw"
