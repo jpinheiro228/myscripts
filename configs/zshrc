@@ -6,7 +6,6 @@ unsetopt nomatch
 bindkey -e
 
 zstyle :compinstall filename '$HOME/.zshrc'
-
 autoload -Uz compinit
 compinit
 
@@ -26,7 +25,6 @@ source $HOME/antigen.zsh
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-
 #antigen bundle git
 #antigen bundle cp
 #antigen bundle archlinux
@@ -42,7 +40,8 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle unixorn/autoupdate-antigen.zshplugin
 
 # Load the theme.
-antigen theme bureau
+antigen theme half-life
+#antigen theme bureau
 #antigen theme af-magic
 
 # Tell Antigen that you're done.

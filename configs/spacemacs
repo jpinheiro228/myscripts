@@ -66,7 +66,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(magit)
+   dotspacemacs-additional-packages '(magit move-text)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -552,6 +552,7 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   ;; Moving between windows
+  (setq mac-command-modifier 'meta)
   (global-set-key (kbd "<S-up>") 'windmove-up)
   (global-set-key (kbd "<S-down>") 'windmove-down)
   (global-set-key (kbd "<S-left>") 'windmove-left)
