@@ -22,7 +22,7 @@ fi
 source ${GIT_HOME}/myscripts/configs/aliases
 
 # Get spacemacs if emacs is present
-if /usr/bin/which -s emacs && [[ ! -f ~/.emacs.d/spacemacs.mk ]]; then
+if ${/usr/bin/which emacs 2>&1 /dev/null } && [[ ! -f ~/.emacs.d/spacemacs.mk ]]; then
     git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 fi
 
