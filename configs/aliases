@@ -16,3 +16,15 @@ alias tmr="transmission-remote -n 'transmission:transmission'"
 alias ish="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 alias iscp="scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 alias fssh="ssh -o ForwardAgent=yes"
+function magit () {
+    CUR_DIR=`pwd`
+    if [[ $# -ge 1 ]]; then
+        cd $1
+    fi
+    if [[ ! -d .git ]]; then
+        echo "Not a git repo."
+        return 1
+    fi
+    emacs -nw --no-splash --eval="(magit-status ${pwd})"
+    cd ${CUR_DIR}
+}
